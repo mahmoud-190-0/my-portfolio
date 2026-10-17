@@ -11,10 +11,12 @@ import Services from "./components/Services/Services";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import ThemeSwitcher from "./components/ThemeSwitcher/ThemeSwitcher";
+import Preload from "./components/PreLoader/PreLoader";
 
 export default function App() {
   return (
     <>
+      <Preload />
       <ScrollProgress />
       <Navbar />
       <Hero />

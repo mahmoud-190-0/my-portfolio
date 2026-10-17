@@ -1,0 +1,324 @@
+/* =========================================================
+   FANTASTIC PRELOADER COMPONENT STYLES
+   Author: Mahmoud Ahmed
+   Uses existing root CSS variables with smooth transitions
+========================================================= */
+
+.preloader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary, #0e0e0d);
+  color: var(--text-primary, #f5f3eb);
+  overflow: hidden;
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, visibility;
+}
+
+/* Background atmospheric glow */
+.preloader-overlay::before {
+  content: "";
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--primary-light, rgba(249, 115, 22, 0.18)) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+  animation: preloader-pulse-glow 3s ease-in-out infinite alternate;
+}
+
+/* Fade out state */
+.preloader-overlay.is-exiting {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.02);
+  pointer-events: none;
+}
+
+/* Main Preloader Content Card */
+.preloader-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-8, 2rem);
+  max-width: 440px;
+  width: 90%;
+  animation: preloader-content-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Central Emblem / Orbital Spinner */
+.preloader-emblem {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.preloader-ring-outer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px dashed var(--border-color, #34332c);
+  border-top-color: var(--primary-color, #f97316);
+  border-right-color: var(--primary-color, #f97316);
+  animation: preloader-spin 2.2s linear infinite;
+}
+
+.preloader-ring-inner {
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  border-bottom-color: var(--primary-color, #f97316);
+  border-left-color: var(--primary-color, #f97316);
+  opacity: 0.8;
+  animation: preloader-spin-reverse 1.6s cubic-bezier(0.45, 0.05, 0.55, 0.95)
+    infinite;
+}
+
+.preloader-ring-glow {
+  position: absolute;
+  inset: 16px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--primary-light, rgba(249, 115, 22, 0.25)) 0%,
+    transparent 80%
+  );
+  animation: preloader-pulse 1.8s ease-in-out infinite alternate;
+}
+
+.preloader-center-icon {
+  position: relative;
+  z-index: 3;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--bg-card, #191917);
+  border: 1px solid var(--border-color, #34332c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color, #f97316);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Brand Typography & Name */
+.preloader-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.preloader-title {
+  font-family: var(--font-accent, "Peralta", serif);
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  color: var(--primary-color, #f97316);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-shadow: 0 0 24px var(--primary-light, rgba(249, 115, 22, 0.3));
+}
+
+.preloader-author-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.preloader-author {
+  font-family: var(--font-primary, system-ui, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary, #f5f3eb);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.preloader-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid var(--border-light, #48463b);
+  background-color: var(--bg-secondary, #171715);
+  color: var(--text-secondary, #b5b1a5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Elegant Progress Track */
+.preloader-track-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preloader-bar-bg {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background-color: var(--bg-tertiary, #20201d);
+  border-radius: var(--radius-full, 9999px);
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.preloader-bar-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color, #f97316) 0%,
+    var(--primary-hover, #ea580c) 100%
+  );
+  border-radius: var(--radius-full, 9999px);
+  transition: width 0.15s ease-out;
+  box-shadow: 0 0 10px var(--primary-color, #f97316);
+}
+
+.preloader-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  color: var(--text-muted, #858176);
+  letter-spacing: 0.05em;
+}
+
+.preloader-status-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+}
+
+.preloader-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary-color, #f97316);
+  animation: preloader-dot-blink 1s ease-in-out infinite;
+}
+
+.preloader-percent {
+  font-weight: 600;
+  color: var(--primary-color, #f97316);
+}
+
+/* Keyframe Animations */
+@keyframes preloader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes preloader-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0.85;
+  }
+}
+
+@keyframes preloader-pulse-glow {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0.65;
+  }
+}
+
+@keyframes preloader-content-in {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes preloader-dot-blink {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .preloader-overlay,
+  .preloader-content,
+  .preloader-ring-outer,
+  .preloader-ring-inner,
+  .preloader-ring-glow,
+  .preloader-overlay::before,
+  .preloader-status-dot {
+    animation: none !important;
+    transition: opacity 0.3s ease !important;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .preloader-content {
+    padding: var(--space-6, 1.5rem);
+  }
+  .preloader-emblem {
+    width: 88px;
+    height: 88px;
+  }
+  .preloader-center-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .preloader-title {
+    font-size: 2rem;
+  }
+  .preloader-author {
+    font-size: 0.85rem;
+  }
+}

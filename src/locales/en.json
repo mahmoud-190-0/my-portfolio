@@ -1,0 +1,411 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "process": "Process",
+    "services": "Services",
+    "contact": "Contact",
+    "brand": "Mahmoud",
+    "cta": "Let's Talk",
+    "themeToLight": "Switch to light theme",
+    "themeToDark": "Switch to dark theme",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "logoAria": "Mahmoud — Home",
+    "mainAria": "Main Navigation",
+    "mobileAria": "Mobile Navigation",
+    "metaRole": "Full Stack Developer",
+    "metaPortfolio": "Mahmoud Portfolio"
+  },
+  "language": {
+    "toggleAria": "Switch language",
+    "en": "EN",
+    "ar": "AR"
+  },
+  "hero": {
+    "ariaLabel": "Hero Section",
+    "greeting": "Hi, I'm",
+    "name": "Mahmoud",
+    "intro": "CS & AI Student | Full-Stack Developer crafting intelligent web solutions with a focus on high-performance interfaces and scalable logic.",
+    "ctaText": "CONTACT ME",
+    "whatsappMessage": "Hello Mahmoud, I saw your portfolio and would like to connect!",
+    "avatarAlt": "{{name}} — Full Stack Developer",
+    "location": {
+      "label": "BASED IN",
+      "value": "Sohag, Egypt"
+    },
+    "badge": {
+      "line1": "FULL",
+      "line2": "STACK"
+    },
+    "info": {
+      "coreLabel": "CORE SKILLS",
+      "coreValue": "React.js • Node.js",
+      "expLabel": "EXPERIENCE",
+      "expValue": "2+ Years Coding"
+    }
+  },
+  "about": {
+    "label": "GET TO KNOW ME",
+    "heading": "About Me",
+    "subheading": "Building meaningful digital experiences through code.",
+    "paragraph1": "I'm a <strong>Junior Full Stack Developer</strong> who loves building complete web apps — from the buttons users click to the APIs and databases behind them. I focus on clean, responsive interfaces, well-structured REST APIs, and code that's easy to read and maintain.",
+    "paragraph2": "I enjoy solving problems, learning fast, and turning complex ideas into simple, reliable solutions. Every project is a chance to write better code than the last one.",
+    "cta": "Contact Me",
+    "ctaAria": "Contact Mahmoud Ahmed Ali on WhatsApp (opens in a new tab)",
+    "whatsappMessage": "Hello Mahmoud, I saw your portfolio and would like to connect!"
+  },
+  "skills": {
+    "kicker": "WHAT I DO",
+    "heading": "Skills",
+    "description": "Engineering capabilities across client interfaces, backend architecture, and data pipelines.",
+    "technologiesLabel": "Technologies",
+    "technologiesAria": "Technologies for {{title}}",
+    "items": {
+      "frontEnd": {
+        "title": "Front-End Development",
+        "description": "Responsive, interactive user interfaces and pixel-perfect design implementation.",
+        "technologies": {
+          "0": "HTML5",
+          "1": "CSS3",
+          "2": "JavaScript (ES6+)",
+          "3": "React.js",
+          "4": "Responsive Design"
+        }
+      },
+      "backEnd": {
+        "title": "Back-End Development",
+        "description": "Robust server-side logic, RESTful APIs, and secure authentication systems.",
+        "technologies": {
+          "0": "Node.js",
+          "1": "Express.js",
+          "2": "REST APIs",
+          "3": "Authentication"
+        }
+      },
+      "database": {
+        "title": "Database Management",
+        "description": "Performant database design, structured data modeling, and optimized CRUD operations.",
+        "technologies": {
+          "0": "MongoDB",
+          "1": "MySQL",
+          "2": "Data Modeling",
+          "3": "CRUD Operations"
+        }
+      },
+      "tools": {
+        "title": "Tools & Version Control",
+        "description": "Modern developer tooling, version control workflows, debugging, and performance profiling.",
+        "technologies": {
+          "0": "Git",
+          "1": "GitHub",
+          "2": "Debugging",
+          "3": "Performance Optimization"
+        }
+      },
+      "integration": {
+        "title": "Full-Stack Integration",
+        "description": "End-to-end integration connecting client interfaces with backend services and databases.",
+        "technologies": {
+          "0": "MERN Stack",
+          "1": "API Integration",
+          "2": "Full-Stack Development",
+          "3": "Deployment"
+        }
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "HOW I WORK",
+    "titlePrefix": "My Development",
+    "titleHighlight": "Process",
+    "description": "A disciplined, iterative engineering lifecycle transforming concepts into high-performance, resilient, and beautifully crafted software solutions.",
+    "stepperAria": "Process stages navigation",
+    "deliverablesAria": "Key phase deliverables",
+    "stateCurrent": ", current step",
+    "stateCompleted": ", completed",
+    "nextLabel": "Next Phase",
+    "nextAria": "Next Phase: Step {{number}}",
+    "playback": {
+      "paused": "Paused",
+      "autoAdvancing": "Auto-advancing",
+      "pauseTitle": "Pause auto-advance",
+      "resumeTitle": "Resume auto-advance"
+    },
+    "steps": {
+      "phaseLabel": "Step • {{number}}",
+      "1": {
+        "tabLabel": "Discovery",
+        "title": "Discovery",
+        "description": "Deep diving into your business goals to uncover critical insights and define a focused digital strategy that drives results.",
+        "deliverables": {
+          "0": "Business goals & strategy session",
+          "1": "Core requirement documentation",
+          "2": "Market & competitor research",
+          "3": "Audience & trend analysis",
+          "4": "KPI and success metric definition"
+        }
+      },
+      "2": {
+        "tabLabel": "Planning",
+        "title": "Planning",
+        "description": "Building a structured technical roadmap and selecting a modern tech stack optimized for speed, scale, and long term growth.",
+        "deliverables": {
+          "0": "System architecture design",
+          "1": "Modular component blueprinting",
+          "2": "Performance first tech stack selection",
+          "3": "Interactive wireframe planning",
+          "4": "Sprint & milestone mapping"
+        }
+      },
+      "3": {
+        "tabLabel": "Design",
+        "title": "Design",
+        "description": "Crafting high fidelity visual systems and user experiences that reflect your brand identity and convert visitors into clients.",
+        "deliverables": {
+          "0": "Custom UI/UX visual design",
+          "1": "Motion & interaction prototyping",
+          "2": "Scalable design system creation",
+          "3": "Mobile first responsive layouts",
+          "4": "Rapid iteration & client feedback"
+        }
+      },
+      "4": {
+        "tabLabel": "Development",
+        "title": "Development",
+        "description": "Translating designs into clean, maintainable, production grade code built on reliable and high performance engineering standards.",
+        "deliverables": {
+          "0": "Clean, maintainable codebase",
+          "1": "Dynamic state driven systems",
+          "2": "Third party API integration",
+          "3": "Performance tuned business logic",
+          "4": "Code review & optimization"
+        }
+      },
+      "5": {
+        "tabLabel": "Validation",
+        "title": "Validation",
+        "description": "Running comprehensive tests and performance audits to ensure full stability, security, and optimal Core Web Vitals scores.",
+        "deliverables": {
+          "0": "Cross browser & device testing",
+          "1": "Functional QA audit",
+          "2": "Core Web Vitals optimization",
+          "3": "Security vulnerability checks",
+          "4": "Final polish & refinement"
+        }
+      },
+      "6": {
+        "tabLabel": "Launch",
+        "title": "Launch",
+        "description": "Executing zero downtime deployments with post-launch analytics, monitoring, and ongoing optimization for continuous growth.",
+        "deliverables": {
+          "0": "Zero downtime production deployment",
+          "1": "Domain, SSL & DNS configuration",
+          "2": "CI/CD automated deployment pipeline",
+          "3": "Cloud infrastructure & secrets management",
+          "4": "Uptime monitoring, analytics & post-launch support"
+        }
+      }
+    }
+  },
+  "services": {
+    "eyebrow": "SERVICES",
+    "titleHighlight": "Service",
+    "titleSuffix": "",
+    "description": "End to end digital services engineered to grow your business through technical precision, creative design, and measurable results.",
+    "carouselAria": "Service solutions carousel",
+    "learnMore": "Learn More",
+    "learnMoreAria": "Learn more about {{title}}",
+    "modalCloseAria": "Close service details",
+    "modalEyebrow": "Service Deep Dive",
+    "modalDeliverablesTitle": "Key Deliverables & Capabilities",
+    "modalRequest": "Request This Service",
+    "modalCancel": "Close",
+    "items": {
+      "webDev": {
+        "title": "Custom Web Apps",
+        "description": "Tailored full-stack React applications built with modern architectural standards and high security.",
+        "longDescription": "Engineered from the ground up to match your exact business logic. We create responsive, production-ready web apps with clean code, lightning performance, and intuitive user experiences.",
+        "deliverables": {
+          "0": "Custom React frontend with accessible micro-interactions",
+          "1": "Robust Node.js & Express RESTful API backends",
+          "2": "Scalable database modeling & secure user authentication",
+          "3": "Cross-platform testing & production deployment"
+        }
+      },
+      "productManagement": {
+        "title": "Product Upload & Management",
+        "description": "Bulk product upload, SKU management, and product description optimization.",
+        "longDescription": "Seamless catalog management designed for e-commerce growth. From bulk CSV imports to rich metadata creation, your products are structured to convert visitors into repeat customers.",
+        "deliverables": {
+          "0": "Bulk CSV/XML catalog ingestion & variant structuring",
+          "1": "High-resolution asset compression & responsive CDN delivery",
+          "2": "SEO-rich product titles, descriptions, and schema markup",
+          "3": "Category taxonomies & multi-filter navigation setup"
+        }
+      },
+      "seoOptimization": {
+        "title": "SEO Optimization",
+        "description": "Core Web Vitals improvement, on page SEO, meta tags, and speed optimization for better ranking.",
+        "longDescription": "Data-driven organic search strategy that places your brand in front of high-intent searchers. We optimize every structural signal Google looks for.",
+        "deliverables": {
+          "0": "Structured JSON-LD schema & rich snippet integration",
+          "1": "Dynamic XML sitemaps, robots.txt, and canonical URL hygiene",
+          "2": "Semantic HTML5 landmarks & social OpenGraph cards",
+          "3": "Core Web Vitals profiling for green Google PageSpeed metrics"
+        }
+      },
+      "speedOptimization": {
+        "title": "Speed Optimization",
+        "description": "Improve load times and performance with caching, compression, and code cleanup.",
+        "longDescription": "Every 100ms delay costs conversions. We analyze your runtime bottlenecks, strip out bloated libraries, and implement aggressive caching for instant page loads.",
+        "deliverables": {
+          "0": "Next-generation WebP/AVIF asset compression & lazy loading",
+          "1": "Critical path CSS extraction & asynchronous JS bundling",
+          "2": "Redis/Edge caching headers & browser cache rules",
+          "3": "Script execution profiling & 60fps scroll stability"
+        }
+      },
+      "contentManagement": {
+        "title": "Content Management",
+        "description": "WordPress, Shopify, and custom CMS setup with easy dashboards and secure admin panels.",
+        "longDescription": "Give your marketing team full autonomy without breaking site integrity. We implement modular, intuitive content management systems tailored to your workflow.",
+        "deliverables": {
+          "0": "Headless CMS integration or custom WordPress/Shopify setup",
+          "1": "Modular custom blocks for rapid page composition",
+          "2": "Role-based permissions & safe draft/publish staging",
+          "3": "Automatic daily database snapshots & security hardening"
+        }
+      },
+      "blogSetup": {
+        "title": "Blog Setup",
+        "description": "Structured blog creation with categories, tags, and SEO ready content structure.",
+        "longDescription": "Turn your insights into an inbound traffic engine. We craft elegant typography, responsive reading layouts, and engaging publication workflows.",
+        "deliverables": {
+          "0": "Distraction-free reading experience & responsive typography",
+          "1": "Category hierarchies, tag filters, and author bios",
+          "2": "Automated social sharing cards & newsletter capture forms",
+          "3": "Estimated reading time badges & related articles algorithm"
+        }
+      },
+      "cmsTraining": {
+        "title": "CMS Training & Support",
+        "description": "User training and manuals to help you easily manage your own content.",
+        "longDescription": "Empowering your team with the knowledge to maintain and scale your website confidently, backed by dedicated technical support whenever you need it.",
+        "deliverables": {
+          "0": "Custom step-by-step video tutorials recorded for your team",
+          "1": "Comprehensive PDF administration manuals & cheat-sheets",
+          "2": "Dedicated bug-fix SLA & priority support line",
+          "3": "Regular security patch auditing & dependency updates"
+        }
+      },
+      "branding": {
+        "title": "Branding",
+        "description": "Logo design, typography, color palettes, and digital brand kits for a cohesive online presence.",
+        "longDescription": "Distinctive visual identities that resonate with your target audience. We build holistic design systems that keep your brand unified across every touchpoint.",
+        "deliverables": {
+          "0": "Scalable vector logo assets & responsive icon variants",
+          "1": "Custom typography pairings & fluid responsive font scales",
+          "2": "WCAG-compliant color systems for dark and light modes",
+          "3": "Ready-to-use digital brand style guides & UI components"
+        }
+      }
+    }
+  },
+
+  "contact": {
+    "eyebrow": "GET IN TOUCH",
+    "headingPrefix": "Let's Work",
+    "headingHighlight": "Together",
+    "description": "Have a project in mind or want to discuss potential opportunities? Feel free to reach out. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+    "status": {
+      "title": "Current Status",
+      "desc": "Available for freelance & full-time roles"
+    },
+    "info": {
+      "emailLabel": "EMAIL ME",
+      "emailTitle": "Send email to {{email}}",
+      "copyEmailAria": "Copy email address",
+      "copyEmailTitle": "Copy email",
+      "phoneLabel": "CALL ME",
+      "phoneTitle": "Call {{phone}}",
+      "copyPhoneAria": "Copy phone number",
+      "copyPhoneTitle": "Copy phone",
+      "locationLabel": "LOCATION",
+      "location": "Sohag, Egypt",
+      "country": "Egypt",
+      "responseTime": "WITHIN 24H"
+    },
+    "copied": "Copied",
+    "channels": {
+      "label": "Direct messaging:",
+      "whatsapp": "WhatsApp",
+      "mailto": "Direct Mailto"
+    },
+    "whatsappMessage": "Hello Mahmoud, I saw your portfolio and would like to connect!",
+    "form": {
+      "title": "Contact Me",
+      "metaTo": "to:",
+      "metaStatus": "status:",
+      "metaReady": "ready",
+      "nameLabel": "YOUR NAME",
+      "namePlaceholder": "Ur name",
+      "emailLabel": "YOUR EMAIL",
+      "emailPlaceholder": "Uremail@example.com",
+      "subjectLabel": "SUBJECT",
+      "subjectPlaceholder": "Ur Needed",
+      "messageLabel": "MESSAGE",
+      "messagePlaceholder": "Tell me about your project, timeline, and goals...",
+      "send": "Send Message",
+      "sending": "Sending Message...",
+      "footerNote": "Direct submission to Mahmoud Ahmed • Guaranteed 24h response",
+      "errorRequired": "Please fill in your name, email, and message.",
+      "errorEmail": "Please provide a valid email address."
+    },
+    "success": {
+      "title": "Message Sent Successfully!",
+      "descPrefix": "Thank you,",
+      "descMiddle": "Your message has been received. Mahmoud will review your inquiry and reply to",
+      "descSuffix": "within 24 hours.",
+      "openEmail": "Open in Email Client",
+      "sendAnother": "Send Another Message"
+    },
+    "mailto": {
+      "defaultSubject": "Portfolio Inquiry for Mahmoud Ahmed",
+      "body": "Hello Mahmoud,\n\n{{message}}\n\nFrom: {{name}} ({{email}})"
+    }
+  },
+  "footer": {
+    "name": "Mahmoud Ahmed Ali",
+    "tagline": "Full Stack Developer & Software Developer",
+    "stack": "Next.js | React | Python | Node.js | PHP | WordPress | Shopify",
+    "bio": "Open to freelance projects, long term collaborations, and remote opportunities globally.",
+    "hireCta": "HIRE ME NOW",
+    "hireMessage": "Hello Mahmoud, I saw your portfolio and would like to connect!",
+    "copyrightSuffix": "ALL RIGHTS RESERVED.",
+    "social": {
+      "linkedinAria": "LinkedIn Profile",
+      "linkedinTitle": "LinkedIn",
+      "githubAria": "GitHub Profile",
+      "githubTitle": "GitHub",
+      "facebookAria": "Facebook Profile",
+      "facebookTitle": "Facebook",
+      "xAria": "X (formerly Twitter) Profile",
+      "xTitle": "X (Twitter)",
+      "youtubeAria": "YouTube Channel",
+      "youtubeTitle": "YouTube",
+      "instagramAria": "Instagram Profile",
+      "instagramTitle": "Instagram",
+      "whatsappAria": "WhatsApp Chat",
+      "whatsappTitle": "WhatsApp"
+    }
+  },
+  "marquee": {
+    "techLabel": "⚡ TECH STACK & TOOLS ⚡",
+    "projectsLabel": "🚀 PROJECTS & INNOVATIONS 🚀",
+    "techAlt": "{{name}} technology",
+    "projectAlt": "{{name}} project"
+  }
+}

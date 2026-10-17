@@ -1,0 +1,589 @@
+/* =========================================================
+   NAVBAR COMPONENT STYLES — CSS MODULE
+   Minimal Dark Monochrome with Warm Accent
+   Accent colors driven by Theme Switcher.
+   Full LTR / RTL support (English / Arabic)
+========================================================= */
+
+/* =========================================================
+   1. NAVBAR ROOT
+========================================================= */
+
+.navbar {
+  position: fixed;
+  top: 25px;
+  left: 10%;
+  transform: translateX(-50%);
+
+  width: 80%;
+  height: var(--header-height);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Background and border are now tied to the active Accent */
+  background-color: color-mix(
+    in srgb,
+    var(--primary-color) 8%,
+    var(--bg-overlay)
+  );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid
+    color-mix(in srgb, var(--primary-color) 40%, var(--border-color));
+  border-radius: 40px;
+
+  box-shadow: 0 4px 30px var(--primary-light);
+
+  z-index: var(--z-sticky);
+
+  transition:
+    background-color var(--transition-normal),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal),
+    color var(--transition-normal);
+}
+
+/* Mirror the horizontal origin in RTL for visual balance */
+:global(html[dir="rtl"]) .navbar {
+  left: auto;
+  right: 10%;
+  transform: translateX(50%);
+}
+
+.navbar--scrolled {
+  /* Slightly stronger accent tint when scrolled */
+  background-color: color-mix(
+    in srgb,
+    var(--primary-color) 14%,
+    var(--bg-overlay-scoll)
+  );
+  border-color: color-mix(
+    in srgb,
+    var(--primary-color) 55%,
+    var(--border-color)
+  );
+  box-shadow:
+    var(--shadow-md),
+    0 0 20px var(--primary-light);
+}
+
+.navbar__container {
+  width: min(100% - 3rem, var(--container-width));
+  height: 100%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+/* =========================================================
+   2. BRAND / LOGO
+========================================================= */
+
+.navbar__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: var(--font-bold);
+
+  color: var(--text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  user-select: none;
+  padding: var(--space-2) 0;
+  outline-offset: 4px;
+}
+
+.navbar__logo-text {
+  transition: color var(--transition-fast);
+}
+
+.navbar__logo:hover .navbar__logo-text {
+  color: var(--text-primary);
+}
+
+.navbar__logo-accent {
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+  display: inline-block;
+  transition:
+    transform var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.navbar__logo:hover .navbar__logo-accent {
+  transform: translateY(-2px) scale(1.15);
+}
+
+/* =========================================================
+   3. DESKTOP NAVIGATION LINKS
+========================================================= */
+
+.navbar__nav {
+  display: none;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .navbar__nav {
+    display: flex;
+  }
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__link-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__link {
+  position: relative;
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+  font-weight: var(--font-medium);
+
+  color: var(--text-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: var(--space-2) var(--space-1);
+  transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Hover underline — animated from the reading-direction start */
+.navbar__link::after {
+  content: "";
+  position: absolute;
+  left: var(--space-1);
+  right: var(--space-1);
+  bottom: 0;
+  height: 1px;
+  background-color: var(--primary-color);
+  border-radius: var(--radius-full);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition:
+    transform var(--transition-normal),
+    background-color var(--transition-normal);
+  pointer-events: none;
+}
+
+/* RTL: grow from the right edge */
+:global(html[dir="rtl"]) .navbar__link::after {
+  transform-origin: right center;
+}
+
+.navbar__link:hover {
+  color: var(--text-primary);
+}
+
+.navbar__link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Accessibility: mirror the hover underline on keyboard focus */
+.navbar__link:focus-visible {
+  color: var(--text-primary);
+}
+
+.navbar__link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Active link: keep the motion indicator, hide the hover underline
+   to avoid visual doubling */
+.navbar__link--active {
+  color: var(--text-primary);
+  font-weight: var(--font-semibold);
+}
+
+.navbar__link--active::after {
+  transform: scaleX(0);
+}
+
+.navbar__link--active:hover::after,
+.navbar__link--active:focus-visible::after {
+  transform: scaleX(0);
+}
+
+/* Active indicator underline (unchanged) */
+.navbar__link-indicator {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-normal);
+}
+
+/* =========================================================
+   4. ACTIONS
+========================================================= */
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+/* Theme Toggle Button — Matched with Language Toggle */
+.navbar__theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 40px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: var(--font-semibold);
+
+  text-transform: uppercase;
+  line-height: 1;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.navbar__theme-toggle:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-hover);
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.navbar__theme-toggle:active {
+  transform: translateY(0);
+}
+
+.navbar__theme-toggle:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+.navbar__theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--primary-color);
+  transition: color var(--transition-fast);
+}
+
+.navbar__theme-toggle:hover .navbar__theme-toggle-icon {
+  color: var(--primary-color);
+}
+
+/* Contact CTA Button */
+.navbar__cta {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-primary);
+  font-size: 0.8125rem;
+  font-weight: var(--font-medium);
+
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+
+@media (min-width: 640px) {
+  .navbar__cta {
+    display: inline-flex;
+  }
+}
+
+.navbar__cta:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  box-shadow: 0 0 16px var(--primary-light);
+}
+
+.navbar__cta-icon {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--transition-fast);
+}
+
+.navbar__cta:hover .navbar__cta-icon {
+  transform: translate(2px, -2px);
+}
+
+/* Mirror the CTA arrow in RTL */
+:global(html[dir="rtl"]) .navbar__cta-icon {
+  transform: scaleX(-1);
+}
+
+:global(html[dir="rtl"]) .navbar__cta:hover .navbar__cta-icon {
+  transform: scaleX(-1) translate(2px, -2px);
+}
+
+/* Mobile Menu Toggle Button */
+.navbar__mobile-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  position: relative;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+@media (min-width: 900px) {
+  .navbar__mobile-toggle {
+    display: none;
+  }
+}
+
+.navbar__mobile-toggle:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-hover);
+  color: var(--primary-color);
+}
+
+.navbar__mobile-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+/* =========================================================
+   5. MOBILE NAVIGATION OVERLAY & DRAWER
+========================================================= */
+
+.navbar__mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  top: var(--header-height);
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: calc(var(--z-sticky) - 1);
+}
+
+.navbar__mobile-panel {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--space-6) var(--space-4) var(--space-8);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-sticky);
+  max-height: calc(100vh - var(--header-height));
+  overflow-y: auto;
+}
+
+.navbar__mobile-panel-inner {
+  width: min(100%, var(--container-width));
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.navbar__mobile-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.navbar__mobile-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-primary);
+  font-size: 1.0625rem;
+  font-weight: var(--font-medium);
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    padding-left var(--transition-fast),
+    padding-right var(--transition-fast);
+}
+
+.navbar__mobile-link:hover,
+.navbar__mobile-link:focus-visible {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  padding-left: var(--space-5);
+}
+
+:global(html[dir="rtl"]) .navbar__mobile-link:hover,
+:global(html[dir="rtl"]) .navbar__mobile-link:focus-visible {
+  padding-left: var(--space-4);
+  padding-right: var(--space-5);
+}
+
+.navbar__mobile-link--active {
+  background-color: var(--bg-tertiary);
+  color: var(--primary-color);
+  font-weight: var(--font-semibold);
+  border-left: 3px solid var(--primary-color);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+:global(html[dir="rtl"]) .navbar__mobile-link--active {
+  border-left: 0;
+  border-right: 3px solid var(--primary-color);
+}
+
+.navbar__mobile-link-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary-color);
+  transition: background-color var(--transition-normal);
+}
+
+.navbar__mobile-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-color);
+}
+
+.navbar__mobile-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: 0.75rem var(--space-4);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: 0.9375rem;
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.navbar__mobile-cta:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+:global(html[dir="rtl"]) .navbar__mobile-cta svg {
+  transform: scaleX(-1);
+}
+
+.navbar__mobile-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding-inline: var(--space-1);
+}
+
+.navbar__mobile-lang {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--space-2);
+}
+
+/* =========================================================
+   6. RESPONSIVE BREAKPOINT REFINEMENTS
+========================================================= */
+
+@media (max-width: 900px) {
+  .navbar__container {
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar__container {
+    width: min(100% - 2rem, var(--container-width));
+  }
+
+  .navbar__logo {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile adjustment for the theme toggle (matches lang toggle) */
+@media (max-width: 768px) {
+  .navbar__theme-toggle {
+    width: 40px;
+    padding: 0;
+    gap: 0;
+  }
+}

@@ -1,0 +1,87 @@
+/* =========================================================
+   LANGUAGE TOGGLE — mirrors .navbar__theme-toggle
+========================================================= */
+
+.navbar__lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 40px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: var(--font-semibold);
+
+  text-transform: uppercase;
+  line-height: 1;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.navbar__lang-toggle:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-hover);
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.navbar__lang-toggle:active {
+  transform: translateY(0);
+}
+
+.navbar__lang-toggle:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+/* Icon wrapper — matches .navbar__theme-toggle-icon */
+.navbar__lang-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--primary-color);
+  transition: color var(--transition-fast);
+}
+
+/* ✨ التعديل هنا: خليت لون الأيقونة يطابق لون الثيم بالظبط في الـ Hover */
+.navbar__lang-toggle:hover .navbar__lang-toggle-icon {
+  color: var(--primary-color);
+}
+
+/* Text label */
+.navbar__lang-toggle-text {
+  line-height: 1;
+}
+
+/* RTL — flip icon/text order for Arabic */
+[dir="rtl"] .navbar__lang-toggle {
+  flex-direction: row-reverse;
+}
+
+/* Mobile — icon only, keep the 40px circle footprint */
+@media (max-width: 768px) {
+  .navbar__lang-toggle {
+    width: 40px;
+    padding: 0;
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .navbar__lang-toggle-text {
+    display: none;
+  }
+}

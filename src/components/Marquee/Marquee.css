@@ -1,0 +1,273 @@
+/* =========================================================
+   MARQUEE SECTION — Tech Stack & Projects — CSS MODULE
+   Full LTR / RTL support (English / Arabic)
+========================================================= */
+
+.marquee-section {
+  position: relative;
+  padding-block: var(--space-16);
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+.marquee-section:last-of-type {
+  border-bottom: none;
+}
+
+/* ---------- Label ---------- */
+
+.marquee-label {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: var(--font-semibold);
+
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: var(--space-6);
+  padding-inline: var(--space-4);
+  user-select: none;
+}
+
+/* Arabic: drop letter-spacing/uppercase for natural rendering */
+:global(html[dir="rtl"]) .marquee-label {
+  text-transform: none;
+}
+
+/* Second label needs top margin — previously inline style, now a class */
+.marquee-label--secondary {
+  margin-top: 1rem;
+}
+
+/* ---------- Row / Track ---------- */
+
+.marquee-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding-block: var(--space-6);
+  width: max-content;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+}
+
+/* ---------- Permanent animation ---------- */
+
+.marquee-row--left {
+  animation: marquee-left 45s linear infinite;
+}
+
+.marquee-row--right {
+  animation: marquee-right 45s linear infinite;
+}
+
+.marquee-row:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.3333%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-33.3333%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* =========================================================
+   Card
+========================================================= */
+
+.marquee-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+
+  width: 150px;
+  height: 170px;
+  padding: var(--space-5);
+
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.marquee-item:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px) scale(1.03);
+  background-color: var(--bg-tertiary);
+}
+
+/* ---------- Icon ---------- */
+
+.marquee-image {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: grayscale(0.35);
+  opacity: 0.9;
+  transition:
+    filter var(--transition-fast),
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+  pointer-events: none;
+  user-select: none;
+}
+
+.marquee-item:hover .marquee-image {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+/* ---------- Tech name ---------- */
+
+.marquee-tech-name {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: var(--font-medium);
+
+  text-transform: capitalize;
+  color: var(--text-secondary);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+:global(html[dir="rtl"]) .marquee-tech-name {
+  text-transform: none;
+}
+
+/* ---------- Light-mode tweaks ---------- */
+
+:global([data-theme="light"]) .marquee-image,
+:global(.light) .marquee-image {
+  filter: grayscale(0.2);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1024px) {
+  .marquee-item {
+    width: 130px;
+    height: 150px;
+    padding: var(--space-4);
+  }
+
+  .marquee-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .marquee-tech-name {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee-section {
+    padding-block: var(--space-12);
+  }
+
+  .marquee-row {
+    gap: var(--space-4);
+  }
+
+  .marquee-item {
+    width: 110px;
+    height: 130px;
+    padding: var(--space-3);
+  }
+
+  .marquee-image {
+    width: 52px;
+    height: 52px;
+  }
+
+  .marquee-tech-name {
+    font-size: 0.65rem;
+  }
+
+  .marquee-label {
+    font-size: 0.72rem;
+  }
+
+  :global(html[dir="rtl"]) .marquee-label {
+  }
+
+  .marquee-row--left,
+  .marquee-row--right {
+    animation-duration: 32s;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-item {
+    width: 96px;
+    height: 116px;
+    padding: var(--space-2);
+  }
+
+  .marquee-image {
+    width: 44px;
+    height: 44px;
+  }
+
+  .marquee-tech-name {
+    font-size: 0.6rem;
+  }
+
+  .marquee-row--left,
+  .marquee-row--right {
+    animation-duration: 26s;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-row--left,
+  .marquee-row--right {
+    animation: none !important;
+  }
+
+  .marquee-item,
+  .marquee-image {
+    transition: none !important;
+  }
+}

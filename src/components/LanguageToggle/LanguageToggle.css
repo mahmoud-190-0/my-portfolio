@@ -1,0 +1,191 @@
+/* =========================================================
+   LANGUAGE TOGGLE & EGYPTIAN TOAST / TOOLTIP STYLES
+========================================================= */
+
+.navbar__lang-toggle-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar__lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  padding: 6px 12px;
+  background-color: var(--bg-tertiary, #20201d);
+  color: var(--text-primary, #f5f3eb);
+  border: 1px solid var(--border-color, #34332c);
+  border-radius: var(--radius-md, 0.625rem);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: var(--font-medium, 500);
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  transition:
+    background-color var(--transition-fast, 150ms cubic-bezier(0.16, 1, 0.3, 1)),
+    border-color var(--transition-fast, 150ms cubic-bezier(0.16, 1, 0.3, 1)),
+    color var(--transition-fast, 150ms cubic-bezier(0.16, 1, 0.3, 1)),
+    transform var(--transition-fast, 150ms cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.navbar__lang-toggle:hover {
+  background-color: var(--bg-card, #191917);
+  border-color: var(--primary-color, #f97316);
+  color: var(--primary-color, #f97316);
+  transform: translateY(-1px);
+}
+
+.navbar__lang-toggle:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.navbar__lang-toggle:focus-visible {
+  outline: 2px solid var(--primary-color, #f97316);
+  outline-offset: 2px;
+}
+
+.navbar__lang-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color, #f97316);
+}
+
+.navbar__lang-toggle-text {
+  font-size: 0.825rem;
+  font-weight: var(--font-medium, 500);
+  letter-spacing: 0.02em;
+}
+
+/* Playful shake animation when clicked */
+.navbar__lang-toggle.is-shaking {
+  animation: lang-btn-wobble 350ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes lang-btn-wobble {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(3px, 0, 0);
+  }
+}
+
+/* Stylish Egyptian Toast / Tooltip */
+.navbar__lang-tooltip {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: var(--z-modal, 1000);
+  background-color: var(--bg-card, #191917);
+  color: var(--text-primary, #f5f3eb);
+  border: 1px solid var(--primary-color, #f97316);
+  border-radius: var(--radius-md, 0.625rem);
+  padding: 10px 14px;
+  box-shadow:
+    var(--shadow-md, 0 8px 24px rgba(0, 0, 0, 0.3)),
+    0 0 16px var(--primary-light, rgba(249, 115, 22, 0.18));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  min-width: 220px;
+  max-width: 290px;
+  white-space: normal;
+  text-align: right;
+  direction: rtl;
+  pointer-events: auto;
+  animation: lang-tooltip-pop 220ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+[dir="rtl"] .navbar__lang-tooltip {
+  right: auto;
+  left: 0;
+}
+
+/* Arrow pointer */
+.navbar__lang-tooltip::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: 22px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--bg-card, #191917);
+  border-top: 1px solid var(--primary-color, #f97316);
+  border-left: 1px solid var(--primary-color, #f97316);
+  transform: rotate(45deg);
+}
+
+[dir="rtl"] .navbar__lang-tooltip::before {
+  right: auto;
+  left: 22px;
+}
+
+@keyframes lang-tooltip-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.navbar__lang-tooltip-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2, 0.5rem);
+}
+
+.navbar__lang-tooltip-msg {
+  font-size: 0.9rem;
+  font-weight: var(--font-medium, 500);
+  line-height: 1.45;
+  color: var(--text-primary, #f5f3eb);
+}
+
+.navbar__lang-tooltip-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--text-muted, #858176);
+  cursor: pointer;
+  padding: 3px;
+  border-radius: var(--radius-sm, 0.375rem);
+  transition:
+    color var(--transition-fast, 150ms ease),
+    background-color var(--transition-fast, 150ms ease);
+}
+
+.navbar__lang-tooltip-close:hover {
+  color: var(--primary-color, #f97316);
+  background-color: var(--bg-tertiary, #20201d);
+}
+
+/* Mobile responsive alignment */
+@media (max-width: 640px) {
+  .navbar__lang-tooltip {
+    right: -10px;
+    max-width: 250px;
+  }
+
+  .navbar__lang-tooltip::before {
+    right: 28px;
+  }
+}

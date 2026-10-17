@@ -1,0 +1,23 @@
+/* ========================================
+   APP LAYOUT
+======================================== */
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: clip;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+}
+
+

@@ -1,0 +1,656 @@
+/* =========================================================
+   HERO SECTION — Minimal Dark Monochrome (CENTERED)
+   Fully responsive: 320px → 1920px+
+   Full LTR / RTL support (English / Arabic)
+   Accent colors driven by Theme Switcher.
+========================================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  padding-top: calc(var(--header-height, 80px) + var(--space-16, 4rem));
+  padding-bottom: 0;
+  overflow: hidden;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary);
+}
+
+.heroContainer {
+  width: min(100% - 2rem, var(--container-width, 1200px));
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================================================
+   1. MAIN GRID (centered)
+========================================================= */
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: var(--space-10, 2.5rem);
+  padding-bottom: var(--space-12, 3rem);
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .heroContainer {
+    width: min(100% - 3rem, 1200px);
+  }
+  .heroGrid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--space-16, 4rem);
+    padding-bottom: var(--space-16, 4rem);
+  }
+}
+
+/* =========================================================
+   2. LEFT COLUMN (centered)
+========================================================= */
+
+.heroIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 650px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.heroHeadline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 6.5vw, 4.75rem);
+  font-weight: var(--font-bold, 700);
+  line-height: 1.1;
+
+  color: var(--text-primary);
+  margin-bottom: var(--space-4, 1rem);
+  text-wrap: balance;
+  word-break: break-word;
+}
+
+/* Arabic headings: remove negative tracking and open up line-height */
+:global(html[dir="rtl"]) .heroHeadline {
+  line-height: 1.3;
+}
+
+.heroHeadlineAccent {
+  color: var(--primary-color);
+  font-style: normal;
+  display: inline-block;
+}
+
+.heroBio {
+  font-family: var(--font-primary);
+  font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: var(--space-8, 2rem);
+  max-width: 580px;
+  margin-inline: auto;
+  font-weight: var(--font-regular, 400);
+}
+
+:global(html[dir="rtl"]) .heroBio {
+  line-height: 1.85;
+}
+
+/* Actions row */
+.heroActionsRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6, 1.5rem);
+  width: 100%;
+}
+
+.heroCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3, 0.75rem);
+  padding: 0.875rem 2rem;
+  background-color: var(--primary-color);
+  color: var(--text-dark);
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+  font-weight: var(--font-bold, 700);
+
+  text-transform: uppercase;
+  border-radius: var(--radius-full, 9999px);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 4px 16px var(--primary-light);
+  transition:
+    background-color var(--transition-fast, 150ms),
+    border-color var(--transition-fast, 150ms),
+    box-shadow var(--transition-fast, 150ms),
+    transform var(--transition-fast, 150ms);
+  white-space: nowrap;
+}
+
+/* Arabic CTA: drop uppercase/tracking */
+:global(html[dir="rtl"]) .heroCtaBtn {
+  text-transform: none;
+}
+
+.heroCtaBtn:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  box-shadow: 0 6px 24px var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.heroCtaIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast, 150ms);
+}
+
+.heroCtaBtn:hover .heroCtaIcon {
+  transform: translate(2px, -2px);
+}
+
+/* Mirror the CTA arrow in RTL */
+:global(html[dir="rtl"]) .heroCtaIcon {
+  transform: scaleX(-1);
+}
+
+:global(html[dir="rtl"]) .heroCtaBtn:hover .heroCtaIcon {
+  transform: scaleX(-1) translate(2px, -2px);
+}
+
+/* Location */
+.heroLocationBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.heroLocationLabel {
+  font-size: 0.6875rem;
+  font-weight: var(--font-semibold, 600);
+
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+:global(html[dir="rtl"]) .heroLocationLabel {
+  text-transform: none;
+}
+
+.heroLocationValue {
+  font-size: 1rem;
+  font-weight: var(--font-medium, 500);
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+}
+
+.heroLocationValue svg {
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   3. RIGHT COLUMN — AVATAR
+========================================================= */
+
+.heroProfileCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.heroAvatarContainer {
+  position: relative;
+  width: min(100%, 380px);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroAvatarFrame {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 8px;
+  /* Background and border tied to the active Accent */
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--primary-color) 40%, var(--border-color)) 0%,
+    var(--primary-color) 50%,
+    color-mix(in srgb, var(--primary-color) 30%, var(--bg-secondary)) 100%
+  );
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  position: relative;
+  transition:
+    transform var(--transition-normal, 250ms),
+    background var(--transition-normal, 250ms),
+    box-shadow var(--transition-normal, 250ms);
+}
+
+.heroAvatarFrame:hover {
+  transform: scale(1.015);
+  box-shadow:
+    0 24px 54px rgba(0, 0, 0, 0.5),
+    0 0 32px var(--primary-light);
+}
+
+.heroAvatarInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+  position: relative;
+}
+
+.heroAvatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform var(--transition-normal, 250ms);
+}
+
+.heroAvatarFrame:hover .heroAvatarImg {
+  transform: scale(1.04);
+}
+
+/* Floating badge */
+.heroFloatingBadge {
+  position: absolute;
+  bottom: 4%;
+  right: 4%;
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--primary-color);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.5),
+    0 0 16px var(--primary-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  user-select: none;
+  padding: var(--space-2, 0.5rem);
+  transition:
+    transform var(--transition-fast, 150ms),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+  pointer-events: none;
+}
+
+/* Mirror badge position in RTL so it doesn't overlap the mirrored layout */
+:global(html[dir="rtl"]) .heroFloatingBadge {
+  right: auto;
+  left: 4%;
+}
+
+.heroBadgeTextTop,
+.heroBadgeTextBottom {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: var(--font-bold, 700);
+
+  line-height: 1.1;
+}
+
+.heroBadgeTextTop {
+  color: var(--primary-color);
+  transition: color var(--transition-normal);
+}
+
+.heroBadgeTextBottom {
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.heroBadgeDot {
+  width: 4px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  margin-top: 3px;
+  transition: background-color var(--transition-normal);
+}
+
+/* =========================================================
+   4. INFO STRIP (centered)
+========================================================= */
+
+.heroInfoStrip {
+  border-top: 1px solid var(--border-color);
+  padding-block: var(--space-8, 2rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8, 2rem);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .heroInfoStrip {
+    gap: var(--space-16, 4rem);
+  }
+}
+
+.heroInfoBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  min-width: 0;
+}
+
+.heroInfoLabel {
+  font-size: 0.6875rem;
+  font-weight: var(--font-semibold, 600);
+
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+:global(html[dir="rtl"]) .heroInfoLabel {
+  text-transform: none;
+}
+
+.heroInfoValue {
+  font-family: var(--font-primary);
+  font-size: clamp(0.95rem, 2vw, 1.0625rem);
+  font-weight: var(--font-semibold, 600);
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   5. RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+  .hero {
+    padding-top: calc(var(--header-height, 68px) + var(--space-12, 3rem));
+  }
+
+  .heroGrid {
+    gap: var(--space-10, 2.5rem);
+  }
+
+  .heroAvatarContainer {
+    width: min(100%, 320px);
+  }
+  .heroLocationLabel {
+    display: none;
+  }
+  .heroFloatingBadge {
+    width: 82px;
+    height: 82px;
+  }
+
+  .heroBadgeTextTop,
+  .heroBadgeTextBottom {
+    font-size: 0.625rem;
+  }
+}
+
+/* =========================================================
+   6. RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .hero {
+    padding-top: calc(var(--header-height, 68px) + var(--space-10, 2.5rem));
+  }
+
+  .heroContainer {
+    width: min(100% - 1.5rem, 1200px);
+  }
+
+  .heroGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-8, 2rem);
+    padding-bottom: var(--space-10, 2.5rem);
+    text-align: center;
+  }
+
+  .heroIntro {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    order: 2;
+  }
+
+  .heroProfileCol {
+    order: 1;
+  }
+
+  .heroHeadline {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    margin-bottom: var(--space-3, 0.75rem);
+  }
+
+  .heroBio {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-6, 1.5rem);
+    max-width: 100%;
+  }
+
+  .heroActionsRow {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: var(--space-5, 1.25rem);
+    width: 100%;
+  }
+
+  .heroCtaBtn {
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+  }
+
+  .heroLocationBlock {
+    align-items: center;
+  }
+
+  .heroAvatarContainer {
+    width: min(72vw, 260px);
+  }
+
+  .heroFloatingBadge {
+    width: 72px;
+    height: 72px;
+    bottom: 0;
+    right: 0;
+  }
+
+  :global(html[dir="rtl"]) .heroFloatingBadge {
+    right: auto;
+    left: 0;
+  }
+
+  .heroBadgeTextTop,
+  .heroBadgeTextBottom {
+    font-size: 0.5625rem;
+  }
+
+  .heroInfoStrip {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-5, 1.25rem);
+    padding-block: var(--space-6, 1.5rem);
+  }
+
+  .heroInfoBlock {
+    display: none;
+  }
+  .heroLocationLabel {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   7. RESPONSIVE — SMALL MOBILE (≤480px)
+========================================================= */
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: calc(var(--header-height, 64px) + var(--space-8, 2rem));
+  }
+  .heroInfoBlock {
+    display: none;
+  }
+  .heroLocationLabel {
+    display: none !important;
+  }
+
+  .heroContainer {
+    width: min(100% - 1.25rem, 1200px);
+  }
+
+  .heroHeadline {
+    font-size: clamp(1.6rem, 8.5vw, 2.1rem);
+    line-height: 1.15;
+  }
+
+  :global(html[dir="rtl"]) .heroHeadline {
+    line-height: 1.35;
+  }
+
+  .heroBio {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .heroCtaBtn {
+    font-size: 0.75rem;
+
+    padding: 0.8rem 1.25rem;
+  }
+
+  .heroAvatarContainer {
+    width: min(78vw, 240px);
+  }
+
+  .heroFloatingBadge {
+    width: 64px;
+    height: 64px;
+    border-width: 1.5px;
+  }
+
+  .heroBadgeTextTop,
+  .heroBadgeTextBottom {
+    font-size: 0.5rem;
+  }
+
+  .heroBadgeDot {
+    width: 3px;
+    height: 3px;
+    margin-top: 2px;
+  }
+}
+
+/* =========================================================
+   8. RESPONSIVE — VERY SMALL (≤360px)
+========================================================= */
+
+@media (max-width: 360px) {
+  .hero {
+    padding-top: calc(var(--header-height, 60px) + var(--space-6, 1.5rem));
+  }
+
+  .heroContainer {
+    width: min(100% - 1rem, 1200px);
+  }
+
+  .heroHeadline {
+    font-size: 1.5rem;
+  }
+
+  .heroBio {
+    font-size: 0.875rem;
+  }
+
+  .heroAvatarContainer {
+    width: min(82vw, 210px);
+  }
+
+  .heroFloatingBadge {
+    width: 56px;
+    height: 56px;
+    bottom: -2px;
+    right: -2px;
+  }
+
+  :global(html[dir="rtl"]) .heroFloatingBadge {
+    right: auto;
+    left: -2px;
+  }
+  .heroInfoBlock {
+    display: none;
+  }
+  .heroLocationLabel {
+    display: none !important;
+  }
+  .heroInfoStrip {
+    gap: var(--space-4, 1rem);
+  }
+}
+
+/* =========================================================
+   9. LANDSCAPE PHONES
+========================================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    padding-top: calc(var(--header-height, 68px) + var(--space-4, 1rem));
+  }
+
+  .heroGrid {
+    padding-bottom: var(--space-6, 1.5rem);
+  }
+
+  .heroAvatarContainer {
+    width: min(48vh, 220px);
+  }
+}
+
+/* =========================================================
+   10. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero *,
+  .hero *::before,
+  .hero *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

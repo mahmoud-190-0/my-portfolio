@@ -1,0 +1,32 @@
+// src/components/LanguageToggle.jsx
+import { useTranslation } from "react-i18next";
+import { MdLanguage } from "react-icons/md";
+import "./LanguageToggle.css";
+
+export default function LanguageToggle({ className = "" }) {
+  const { i18n, t } = useTranslation();
+  const current = i18n.language === "ar" ? "ar" : "en";
+
+  const toggle = () => {
+    const next = current === "ar" ? "en" : "ar";
+    i18n.changeLanguage(next);
+    document.documentElement.setAttribute("dir", next === "ar" ? "rtl" : "ltr");
+    document.documentElement.lang = next;
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      className={`navbar__lang-toggle ${className}`.trim()}
+      aria-label={t("language.toggleAria")}
+      title={t("language.toggleAria")}>
+      <span className="navbar__lang-toggle-icon">
+        <MdLanguage size={18} aria-hidden="true" />
+      </span>
+      <span className="navbar__lang-toggle-text">
+        {current === "ar" ? t("language.en") : t("language.ar")}
+      </span>
+    </button>
+  );
+}

@@ -1,0 +1,411 @@
+/* =========================================================
+   CUSTOM FOOTER SECTION — CSS MODULE
+   Uses design-system variables from styles.css
+   Accent colors are driven by the Theme Switcher
+   (--primary-color / --primary-hover / --primary-light)
+   Full LTR / RTL support (English / Arabic)
+========================================================= */
+
+.custom-footer-section {
+  position: relative;
+  background-color: var(--bg-primary);
+  padding: var(--space-16) var(--space-4) var(--space-12) var(--space-4);
+  overflow: hidden;
+  transition: background-color var(--transition-normal);
+}
+
+.custom-footer-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   FLOATING ROUNDED MINIMAL FOOTER CARD
+========================================================= */
+.custom-footer-card {
+  position: relative;
+  background-color: var(--footer-card-bg);
+  border: 1px solid var(--footer-border);
+  box-shadow: var(--footer-card-shadow);
+  border-radius: 26px;
+  overflow: hidden;
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal),
+    background-color var(--transition-normal);
+}
+
+/* Atmospheric aura radiating from upper-left quadrant.
+   Driven entirely by the active accent color. */
+.custom-footer-aura {
+  position: absolute;
+  top: -40%;
+  left: -20%;
+  width: 140%;
+  height: 180%;
+  background: radial-gradient(
+    circle at 35% 30%,
+    var(--primary-light) 0%,
+    color-mix(in srgb, var(--primary-color) 32%, transparent) 32%,
+    color-mix(in srgb, var(--primary-color) 12%, transparent) 55%,
+    transparent 72%
+  );
+  pointer-events: none;
+  z-index: 0;
+  transition: background var(--transition-normal);
+}
+
+.custom-footer-card-inner {
+  position: relative;
+  z-index: 1;
+  padding: clamp(2.75rem, 5vw, 4.25rem) clamp(1.5rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* =========================================================
+   BRAND LOGO & NAME
+========================================================= */
+.custom-footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.custom-footer-logo-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  border: 1px solid color-mix(in srgb, var(--primary-color) 32%, transparent);
+  color: var(--primary-color);
+  box-shadow: 0 0 18px var(--primary-light);
+  flex-shrink: 0;
+  overflow: visible;
+  transition:
+    background-color var(--transition-normal),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal),
+    color var(--transition-normal);
+}
+
+.custom-footer-logo-badge svg {
+  width: 30px;
+  height: 30px;
+}
+
+.custom-footer-brand-name {
+  font-family: var(--font-primary);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--footer-brand-text);
+}
+
+:global(html[dir="rtl"]) .custom-footer-brand-name {
+}
+
+/* =========================================================
+   TYPOGRAPHY: ROLE, STACK, BIO
+========================================================= */
+.custom-footer-role {
+  font-family: var(--font-primary);
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+  font-weight: 700;
+  color: var(--footer-role-text);
+  margin: 0 0 var(--space-2) 0;
+}
+
+:global(html[dir="rtl"]) .custom-footer-role {
+  line-height: 1.4;
+}
+
+.custom-footer-stack {
+  font-family: var(--font-primary);
+  font-size: clamp(0.85rem, 1.8vw, 0.98rem);
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: var(--space-3);
+
+  word-spacing: 0.05em;
+  max-width: 680px;
+  transition: color var(--transition-normal);
+}
+
+:global(html[dir="rtl"]) .custom-footer-stack {
+  word-spacing: 0;
+}
+
+.custom-footer-bio {
+  font-family: var(--font-primary);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: var(--footer-bio-text);
+  max-width: 580px;
+  margin: 0 0 var(--space-8) 0;
+}
+
+:global(html[dir="rtl"]) .custom-footer-bio {
+  line-height: 1.85;
+}
+
+/* =========================================================
+   MINIMAL ACTIONS ROW & SOCIAL BUTTON CARDS
+========================================================= */
+.custom-footer-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-7);
+  width: 100%;
+}
+
+.custom-social-group {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Base Minimal Card State for all Social Buttons */
+.custom-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--footer-social-bg);
+  border: 1px solid var(--footer-social-border);
+  color: var(--footer-social-icon);
+  text-decoration: none;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-social-btn:hover {
+  transform: translateY(-3px) scale(1.08);
+  color: #ffffff;
+}
+
+.custom-social-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* ---------------------------------------------------------
+   APP-SPECIFIC BRAND COLORS ON HOVER
+--------------------------------------------------------- */
+
+/* LinkedIn */
+.custom-social-linkedin:hover {
+  background: var(--social-linkedin);
+  border-color: var(--social-linkedin);
+  color: #ffffff;
+  box-shadow:
+    0 8px 22px rgba(0, 119, 181, 0.55),
+    0 0 12px rgba(0, 119, 181, 0.35);
+}
+
+/* GitHub */
+.custom-social-github:hover {
+  background: var(--social-github);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  box-shadow:
+    0 8px 22px rgba(255, 255, 255, 0.22),
+    0 0 14px rgba(255, 255, 255, 0.12);
+}
+
+/* Facebook */
+.custom-social-facebook:hover {
+  background: var(--social-facebook);
+  border-color: var(--social-facebook);
+  color: #ffffff;
+  box-shadow:
+    0 8px 22px rgba(24, 119, 242, 0.55),
+    0 0 12px rgba(24, 119, 242, 0.35);
+}
+
+/* X (Twitter) */
+.custom-social-x:hover {
+  background: var(--social-x);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #ffffff;
+  box-shadow:
+    0 8px 22px rgba(255, 255, 255, 0.25),
+    0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+/* YouTube */
+.custom-social-youtube:hover {
+  background: var(--social-youtube);
+  border-color: var(--social-youtube);
+  color: #ffffff;
+  box-shadow:
+    0 8px 22px rgba(255, 0, 0, 0.55),
+    0 0 14px rgba(255, 0, 0, 0.35);
+}
+
+/* Instagram */
+.custom-social-instagram:hover {
+  background: var(--social-instagram-gradient);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow:
+    0 8px 22px rgba(214, 36, 159, 0.55),
+    0 0 14px rgba(253, 89, 73, 0.4);
+}
+
+/* WhatsApp */
+.custom-social-whatsapp:hover {
+  background: var(--social-whatsapp);
+  border-color: var(--social-whatsapp);
+  color: #ffffff;
+  box-shadow:
+    0 8px 22px rgba(37, 211, 102, 0.55),
+    0 0 14px rgba(37, 211, 102, 0.35);
+}
+
+/* =========================================================
+   PRIMARY CTA: HIRE ME NOW BUTTON
+========================================================= */
+.custom-footer-cta-wrap {
+  margin-top: 30px;
+}
+
+.custom-hire-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.85rem 2.25rem;
+  background: var(--primary-color);
+  color: var(--text-dark);
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: 0.88rem;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 8px 24px var(--primary-light);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+/* Arabic CTA: drop uppercase/tracking for natural Arabic rendering */
+:global(html[dir="rtl"]) .custom-hire-btn {
+  text-transform: none;
+}
+
+.custom-hire-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px var(--primary-light);
+}
+
+.custom-hire-btn:active {
+  transform: translateY(0);
+}
+
+.custom-hire-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.custom-hire-btn:hover .custom-hire-arrow {
+  transform: translateX(3px);
+}
+
+/* Mirror the arrow in RTL — should slide left on hover instead of right */
+:global(html[dir="rtl"]) .custom-hire-arrow {
+  transform: scaleX(-1);
+}
+
+:global(html[dir="rtl"]) .custom-hire-btn:hover .custom-hire-arrow {
+  transform: scaleX(-1) translateX(3px);
+}
+
+/* =========================================================
+   BOTTOM HORIZON LINE & COPYRIGHT
+========================================================= */
+.custom-footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--space-8);
+}
+
+.custom-footer-glow-line {
+  width: 240px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--primary-color) 50%,
+    transparent 100%
+  );
+  box-shadow: 0 0 12px var(--primary-light);
+  margin-bottom: var(--space-5);
+  transition:
+    background var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.custom-footer-copyright {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--primary-color);
+
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin: 0;
+  text-align: center;
+  transition: color var(--transition-normal);
+}
+
+:global(html[dir="rtl"]) .custom-footer-copyright {
+  text-transform: none;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+========================================================= */
+@media (max-width: 640px) {
+  .custom-footer-section {
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-8);
+  }
+
+  .custom-footer-card-inner {
+    padding: 2.25rem 1.25rem;
+  }
+
+  .custom-social-group {
+    gap: 10px;
+  }
+
+  .custom-social-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .custom-hire-btn {
+    width: 100%;
+  }
+
+  .custom-footer-glow-line {
+    width: 160px;
+  }
+}

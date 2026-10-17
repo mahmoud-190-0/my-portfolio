@@ -1,0 +1,410 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "about": " عني",
+    "skills": "المهارات",
+    "projects": "المشاريع",
+    "process": "الية العمل",
+    "services": "الخدمات",
+    "contact": "تواصل",
+    "brand": "Mahmoud",
+    "cta": "لنتحدث",
+    "themeToLight": "التبديل إلى الوضع الفاتح",
+    "themeToDark": "التبديل إلى الوضع الداكن",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق ",
+    "logoAria": "Mahmoud  — الصفحة الرئيسية",
+    "mainAria": "التنقل الرئيسي",
+    "mobileAria": "قائمة التنقل للجوال",
+    "metaRole": "Full Stack Developer",
+    "metaPortfolio": "ملف محمود الشخصي"
+  },
+  "language": {
+    "toggleAria": "تغيير اللغة",
+    "en": "EN",
+    "ar": "AR"
+  },
+  "hero": {
+    "ariaLabel": "القسم الترحيبي",
+    "greeting": "مرحبًا، أنا",
+    "name": "محمود",
+    "intro": "طالب في علوم الحاسب والذكاء الاصطناعي | مطوّر ويب متكامل أصنع حلولًا رقمية ذكية، مع تركيز على واجهات عالية الأداء ومنطق برمجي قابل للتوسع.",
+    "ctaText": "تواصل معي",
+    "whatsappMessage": "مرحبًا محمود، لقد شاهدت ملفك الشخصي وأود التواصل معك!",
+    "avatarAlt": "{{name}} — Full Stack Developer",
+    "location": {
+      "label": "",
+      "value": " EGYPT"
+    },
+    "badge": {
+      "line1": "FULL",
+      "line2": "STACK"
+    },
+    "info": {
+      "coreLabel": "CORE SKILLS",
+      "coreValue": "React.js • Node.js",
+      "expLabel": "EXPERIENCE",
+      "expValue": "2+ Years Coding"
+    }
+  },
+  "about": {
+    "label": "تعرّف عليّ",
+    "heading": "نبذة عني",
+    "subheading": "أصنع تجارب رقمية ذات معنى من خلال البرمجة.",
+    "paragraph1": "أنا <strong>مطوّر ويب متكامل مبتدئ</strong> أحب بناء تطبيقات ويب كاملة — من الأزرار التي ينقر عليها المستخدم إلى واجهات API وقواعد البيانات خلفها. أركّز على واجهات نظيفة ومتجاوبة، وواجهات REST API منظّمة جيدًا، وكود سهل القراءة والصيانة.",
+    "paragraph2": "أستمتع بحل المشكلات والتعلّم السريع وتحويل الأفكار المعقدة إلى حلول بسيطة وموثوقة. كل مشروع هو فرصة لكتابة كود أفضل من السابق.",
+    "cta": "تواصل معي",
+    "ctaAria": "تواصل مع محمود أحمد علي عبر واتساب (يفتح في تبويب جديد)",
+    "whatsappMessage": "مرحبًا محمود، لقد شاهدت ملفك الشخصي وأود التواصل معك!"
+  },
+  "skills": {
+    "kicker": "ما أقدّمه",
+    "heading": "المهارات",
+    "description": "قدرات هندسية تشمل واجهات المستخدم، وبنية الخوادم الخلفية، وخطوط معالجة البيانات.",
+    "technologiesLabel": "التقنيات",
+    "technologiesAria": "تقنيات {{title}}",
+    "items": {
+      "frontEnd": {
+        "title": "تطوير الواجهات الأمامية",
+        "description": "واجهات مستخدم متجاوبة وتفاعلية، وتنفيذ دقيق للتصميم بأعلى معايير الجودة.",
+        "technologies": {
+          "0": "HTML5",
+          "1": "CSS3",
+          "2": "JavaScript (ES6+)",
+          "3": "React.js",
+          "4": "التصميم المتجاوب"
+        }
+      },
+      "backEnd": {
+        "title": "تطوير الخوادم الخلفية",
+        "description": "منطق خلفي متين، وواجهات RESTful API، وأنظمة مصادقة آمنة.",
+        "technologies": {
+          "0": "Node.js",
+          "1": "Express.js",
+          "2": "REST APIs",
+          "3": "المصادقة"
+        }
+      },
+      "database": {
+        "title": "إدارة قواعد البيانات",
+        "description": "تصميم قواعد بيانات عالية الأداء، ونمذجة بيانات منظمة، وعمليات CRUD محسّنة.",
+        "technologies": {
+          "0": "MongoDB",
+          "1": "MySQL",
+          "2": "نمذجة البيانات",
+          "3": "عمليات CRUD"
+        }
+      },
+      "tools": {
+        "title": "الأدوات والتحكم في الإصدارات",
+        "description": "أدوات تطوير حديثة، وسير عمل للتحكم في الإصدارات، وتصحيح أخطاء، وتحليل الأداء.",
+        "technologies": {
+          "0": "Git",
+          "1": "GitHub",
+          "2": "تصحيح الأخطاء",
+          "3": "تحسين الأداء"
+        }
+      },
+      "integration": {
+        "title": "التكامل المتكامل",
+        "description": "تكامل شامل يربط واجهات العميل بالخدمات الخلفية وقواعد البيانات.",
+        "technologies": {
+          "0": "MERN Stack",
+          "1": "تكامل واجهات API",
+          "2": "تطوير متكامل",
+          "3": "النشر"
+        }
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "كيف أعمل",
+    "titlePrefix": "منهجية",
+    "titleHighlight": "التطوير",
+    "description": "دورة هندسية منظمة وقائمة على التكرار، تحوّل المفاهيم إلى حلول برمجية عالية الأداء ومرنة ومتقنة الصنع.",
+    "stepperAria": "التنقل بين مراحل العملية",
+    "deliverablesAria": "المخرجات الرئيسية للمرحلة",
+    "stateCurrent": "، الخطوة الحالية",
+    "stateCompleted": "، مكتملة",
+    "nextLabel": "المرحلة التالية",
+    "nextAria": "المرحلة التالية: الخطوة {{number}}",
+    "playback": {
+      "paused": "متوقف",
+      "autoAdvancing": "انتقال تلقائي",
+      "pauseTitle": "إيقاف الانتقال التلقائي",
+      "resumeTitle": "استئناف الانتقال التلقائي"
+    },
+    "steps": {
+      "phaseLabel": "الخطوة • {{number}}",
+      "1": {
+        "tabLabel": "الاستكشاف",
+        "title": "الاستكشاف",
+        "description": "التعمّق في أهداف عملك لاكتشاف الرؤى الجوهرية وتحديد استراتيجية رقمية مركّزة تحقق النتائج.",
+        "deliverables": {
+          "0": "جلسة استراتيجية لأهداف العمل",
+          "1": "توثيق المتطلبات الأساسية",
+          "2": "دراسة السوق والمنافسين",
+          "3": "تحليل الجمهور والاتجاهات",
+          "4": "تحديد مؤشرات الأداء ومعايير النجاح"
+        }
+      },
+      "2": {
+        "tabLabel": "التخطيط",
+        "title": "التخطيط",
+        "description": "بناء خارطة طريق تقنية منظمة واختيار حزمة تقنيات حديثة محسّنة للسرعة والتوسع والنمو طويل المدى.",
+        "deliverables": {
+          "0": "تصميم البنية المعمارية للنظام",
+          "1": "وضع مخططات المكوّنات المعيارية",
+          "2": "اختيار التقنيات وفق أولوية الأداء",
+          "3": "تخطيط تفاعلي للنماذج الأولية",
+          "4": "تحديد سباقات العمل والمراحل الرئيسية"
+        }
+      },
+      "3": {
+        "tabLabel": "التصميم",
+        "title": "التصميم",
+        "description": "صياغة أنظمة بصرية عالية الدقة وتجارب مستخدم تعكس هوية علامتك التجارية وتحوّل الزوار إلى عملاء.",
+        "deliverables": {
+          "0": "تصميم بصري مخصّص لواجهة وتجربة المستخدم",
+          "1": "نماذج أولية للحركة والتفاعل",
+          "2": "إنشاء نظام تصميم قابل للتوسع",
+          "3": "تخطيطات متجاوبة تبدأ من الجوال",
+          "4": "تكرار سريع وملاحظات العملاء"
+        }
+      },
+      "4": {
+        "tabLabel": "التطوير",
+        "title": "التطوير",
+        "description": "تحويل التصاميم إلى كود نظيف وقابل للصيانة وجاهز للإنتاج، مبني على معايير هندسية موثوقة وعالية الأداء.",
+        "deliverables": {
+          "0": "قاعدة كود نظيفة وقابلة للصيانة",
+          "1": "أنظمة ديناميكية تعتمد على إدارة الحالة",
+          "2": "تكامل مع واجهات API خارجية",
+          "3": "منطق أعمال محسّن للأداء",
+          "4": "مراجعة الكود وتحسينه"
+        }
+      },
+      "5": {
+        "tabLabel": "التحقق",
+        "title": "التحقق",
+        "description": "إجراء اختبارات شاملة وتدقيقات للأداء لضمان الاستقرار الكامل والأمان والحصول على أفضل نتائج في مؤشرات Core Web Vitals.",
+        "deliverables": {
+          "0": "اختبار عبر المتصفحات والأجهزة",
+          "1": "تدقيق وظيفي شامل للجودة",
+          "2": "تحسين مؤشرات Core Web Vitals",
+          "3": "فحص الثغرات الأمنية",
+          "4": "اللمسات الأخيرة والتنقيح"
+        }
+      },
+      "6": {
+        "tabLabel": "الإطلاق",
+        "title": "الإطلاق",
+        "description": "تنفيذ عمليات نشر دون توقف، مع تحليلات ومراقبة بعد الإطلاق وتحسين مستمر لتحقيق نمو متواصل.",
+        "deliverables": {
+          "0": "نشر إنتاجي دون توقف",
+          "1": "إعداد النطاق وشهادة SSL وDNS",
+          "2": "خط نشر آلي عبر CI/CD",
+          "3": "إدارة البنية السحابية والأسرار",
+          "4": "مراقبة وقت التشغيل والتحليلات والدعم بعد الإطلاق"
+        }
+      }
+    }
+  },
+  "services": {
+    "eyebrow": "الخدمات",
+    "titleHighlight": "الخدمات",
+    "titleSuffix": "خدماتنا",
+    "description": "خدمات رقمية متكاملة مصممة لتنمية عملك من خلال الدقة التقنية والتصميم الإبداعي والنتائج القابلة للقياس.",
+    "carouselAria": "عرض الخدمات المتاحة",
+    "learnMore": "اعرف المزيد",
+    "learnMoreAria": "اعرف المزيد عن {{title}}",
+    "modalCloseAria": "إغلاق تفاصيل الخدمة",
+    "modalEyebrow": "نظرة معمّقة على الخدمة",
+    "modalDeliverablesTitle": "المخرجات والقدرات الرئيسية",
+    "modalRequest": "اطلب هذه الخدمة",
+    "modalCancel": "إغلاق",
+    "items": {
+      "webDev": {
+        "title": "Custom Web Apps",
+        "description": "Tailored full-stack React applications built with modern architectural standards and high security.",
+        "longDescription": "Engineered from the ground up to match your exact business logic. We create responsive, production-ready web apps with clean code, lightning performance, and intuitive user experiences.",
+        "deliverables": {
+          "0": "Custom React frontend with accessible micro-interactions",
+          "1": "Robust Node.js & Express RESTful API backends",
+          "2": "Scalable database modeling & secure user authentication",
+          "3": "Cross-platform testing & production deployment"
+        }
+      },
+      "productManagement": {
+        "title": "Product Upload & Management",
+        "description": "Bulk product upload, SKU management, and product description optimization.",
+        "longDescription": "Seamless catalog management designed for e-commerce growth. From bulk CSV imports to rich metadata creation, your products are structured to convert visitors into repeat customers.",
+        "deliverables": {
+          "0": "Bulk CSV/XML catalog ingestion & variant structuring",
+          "1": "High-resolution asset compression & responsive CDN delivery",
+          "2": "SEO-rich product titles, descriptions, and schema markup",
+          "3": "Category taxonomies & multi-filter navigation setup"
+        }
+      },
+      "seoOptimization": {
+        "title": "SEO Optimization",
+        "description": "Core Web Vitals improvement, on page SEO, meta tags, and speed optimization for better ranking.",
+        "longDescription": "Data-driven organic search strategy that places your brand in front of high-intent searchers. We optimize every structural signal Google looks for.",
+        "deliverables": {
+          "0": "Structured JSON-LD schema & rich snippet integration",
+          "1": "Dynamic XML sitemaps, robots.txt, and canonical URL hygiene",
+          "2": "Semantic HTML5 landmarks & social OpenGraph cards",
+          "3": "Core Web Vitals profiling for green Google PageSpeed metrics"
+        }
+      },
+      "speedOptimization": {
+        "title": "Speed Optimization",
+        "description": "Improve load times and performance with caching, compression, and code cleanup.",
+        "longDescription": "Every 100ms delay costs conversions. We analyze your runtime bottlenecks, strip out bloated libraries, and implement aggressive caching for instant page loads.",
+        "deliverables": {
+          "0": "Next-generation WebP/AVIF asset compression & lazy loading",
+          "1": "Critical path CSS extraction & asynchronous JS bundling",
+          "2": "Redis/Edge caching headers & browser cache rules",
+          "3": "Script execution profiling & 60fps scroll stability"
+        }
+      },
+      "contentManagement": {
+        "title": "Content Management",
+        "description": "WordPress, Shopify, and custom CMS setup with easy dashboards and secure admin panels.",
+        "longDescription": "Give your marketing team full autonomy without breaking site integrity. We implement modular, intuitive content management systems tailored to your workflow.",
+        "deliverables": {
+          "0": "Headless CMS integration or custom WordPress/Shopify setup",
+          "1": "Modular custom blocks for rapid page composition",
+          "2": "Role-based permissions & safe draft/publish staging",
+          "3": "Automatic daily database snapshots & security hardening"
+        }
+      },
+      "blogSetup": {
+        "title": "Blog Setup",
+        "description": "Structured blog creation with categories, tags, and SEO ready content structure.",
+        "longDescription": "Turn your insights into an inbound traffic engine. We craft elegant typography, responsive reading layouts, and engaging publication workflows.",
+        "deliverables": {
+          "0": "Distraction-free reading experience & responsive typography",
+          "1": "Category hierarchies, tag filters, and author bios",
+          "2": "Automated social sharing cards & newsletter capture forms",
+          "3": "Estimated reading time badges & related articles algorithm"
+        }
+      },
+      "cmsTraining": {
+        "title": "CMS Training & Support",
+        "description": "User training and manuals to help you easily manage your own content.",
+        "longDescription": "Empowering your team with the knowledge to maintain and scale your website confidently, backed by dedicated technical support whenever you need it.",
+        "deliverables": {
+          "0": "Custom step-by-step video tutorials recorded for your team",
+          "1": "Comprehensive PDF administration manuals & cheat-sheets",
+          "2": "Dedicated bug-fix SLA & priority support line",
+          "3": "Regular security patch auditing & dependency updates"
+        }
+      },
+      "branding": {
+        "title": "Branding",
+        "description": "Logo design, typography, color palettes, and digital brand kits for a cohesive online presence.",
+        "longDescription": "Distinctive visual identities that resonate with your target audience. We build holistic design systems that keep your brand unified across every touchpoint.",
+        "deliverables": {
+          "0": "Scalable vector logo assets & responsive icon variants",
+          "1": "Custom typography pairings & fluid responsive font scales",
+          "2": "WCAG-compliant color systems for dark and light modes",
+          "3": "Ready-to-use digital brand style guides & UI components"
+        }
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "تواصل معي",
+    "headingPrefix": "لنعمل",
+    "headingHighlight": "معًا",
+    "description": "هل لديك مشروع في ذهنك أو ترغب في مناقشة فرص محتملة؟ لا تتردد في التواصل. أنا دائمًا منفتح لمناقشة مشاريع جديدة وأفكار إبداعية وفرص للمشاركة في رؤيتك.",
+    "status": {
+      "title": "الحالة الحالية",
+      "desc": "متاح للعمل الحر والوظائف بدوام كامل"
+    },
+    "info": {
+      "emailLabel": "راسلني",
+      "emailTitle": "إرسال بريد إلى {{email}}",
+      "copyEmailAria": "نسخ عنوان البريد الإلكتروني",
+      "copyEmailTitle": "نسخ البريد",
+      "phoneLabel": "اتصل بي",
+      "phoneTitle": "الاتصال على {{phone}}",
+      "copyPhoneAria": "نسخ رقم الهاتف",
+      "copyPhoneTitle": "نسخ الهاتف",
+      "locationLabel": "الموقع",
+      "location": "سوهاج، مصر",
+      "country": "مصر",
+      "responseTime": "خلال 24 ساعة"
+    },
+    "copied": "تم النسخ",
+    "channels": {
+      "label": "",
+      "whatsapp": "واتساب",
+      "mailto": " ايميل"
+    },
+    "whatsappMessage": "مرحبًا محمود، لقد شاهدت ملفك الشخصي وأود التواصل معك!",
+    "form": {
+      "title": "تواصل معي",
+      "metaTo": "إلى:",
+      "metaStatus": "الحالة:",
+      "metaReady": "جاهز",
+      "nameLabel": "اسمك",
+      "namePlaceholder": "اكتب اسمك",
+      "emailLabel": "بريدك الإلكتروني",
+      "emailPlaceholder": "example@email.com",
+      "subjectLabel": "الموضوع",
+      "subjectPlaceholder": "ما تحتاجه",
+      "messageLabel": "الرسالة",
+      "messagePlaceholder": "أخبرني عن مشروعك والجدول الزمني والأهداف...",
+      "send": "إرسال الرسالة",
+      "sending": "جارٍ إرسال الرسالة...",
+      "footerNote": "إرسال مباشر إلى محمود أحمد • رد مضمون خلال 24 ساعة",
+      "errorRequired": "يرجى ملء الاسم والبريد الإلكتروني والرسالة.",
+      "errorEmail": "يرجى إدخال بريد إلكتروني صالح."
+    },
+    "success": {
+      "title": "تم إرسال الرسالة بنجاح!",
+      "descPrefix": "شكرًا لك،",
+      "descMiddle": "لقد تم استلام رسالتك. سيراجع محمود استفسارك ويرد على",
+      "descSuffix": "خلال 24 ساعة.",
+      "openEmail": "فتح في تطبيق البريد",
+      "sendAnother": "إرسال رسالة أخرى"
+    },
+    "mailto": {
+      "defaultSubject": "استفسار حول ملف محمود الشخصي",
+      "body": "مرحبًا محمود،\n\n{{message}}\n\nمن: {{name}} ({{email}})"
+    }
+  },
+  "footer": {
+    "name": "Mahmoud Ahmed Ali",
+    "tagline": "Full Stack Developer & Software Developer",
+    "stack": "Next.js | React | Python | Node.js | PHP | WordPress | Shopify",
+    "bio": "Open to freelance projects, long term collaborations, and remote opportunities globally.",
+    "hireCta": "HIRE ME NOW",
+    "hireMessage": "مرحبًا محمود، لقد شاهدت ملفك الشخصي وأود التواصل معك!",
+    "copyrightSuffix": "ALL RIGHTS RESERVED.",
+    "social": {
+      "linkedinAria": "الملف الشخصي على LinkedIn",
+      "linkedinTitle": "LinkedIn",
+      "githubAria": "الملف الشخصي على GitHub",
+      "githubTitle": "GitHub",
+      "facebookAria": "الملف الشخصي على Facebook",
+      "facebookTitle": "Facebook",
+      "xAria": "الملف الشخصي على X (تويتر سابقًا)",
+      "xTitle": "X (تويتر)",
+      "youtubeAria": "قناة YouTube",
+      "youtubeTitle": "YouTube",
+      "instagramAria": "الملف الشخصي على Instagram",
+      "instagramTitle": "Instagram",
+      "whatsappAria": "محادثة WhatsApp",
+      "whatsappTitle": "WhatsApp"
+    }
+  },
+  "marquee": {
+    "techLabel": "⚡ التقنيات والأدوات ⚡",
+    "projectsLabel": "🚀 المشاريع والابتكارات 🚀",
+    "techAlt": "تقنية {{name}}",
+    "projectAlt": "مشروع {{name}}"
+  }
+}

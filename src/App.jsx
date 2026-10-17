@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { MotionConfig } from "motion/react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
@@ -15,20 +15,22 @@ import Preload from "./components/PreLoader/PreLoader";
 
 export default function App() {
   return (
-    <>
-      <Preload />
-      <ScrollProgress />
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <MarqueeSection />
-      <Projects />
-      <ProcessSection />
-      <Services />
-      <Contact />
-      <Footer />
-      <ThemeSwitcher />
-    </>
+    <MotionConfig reducedMotion="user">
+      <>
+        <Preload />
+        <ScrollProgress />
+        <Navbar />
+        <Hero />
+        <About />
+        <Skills />
+        <MarqueeSection />
+        <Projects />
+        <ProcessSection />
+        <Services />
+        <Contact />
+        <Footer />
+        <ThemeSwitcher />
+      </>
+    </MotionConfig>
   );
 }

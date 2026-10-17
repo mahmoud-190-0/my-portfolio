@@ -9,9 +9,11 @@ const IDLE_DELAY = 700; // ms after scroll stops before flipping to arrow
 export default function ScrollProgress({ showAfter = 400 }) {
   const barRef = useRef(null);
   const ringRef = useRef(null);
+  const percentRef = useRef(null);
   const idleTimerRef = useRef(null);
+  const isVisibleRef = useRef(false);
+  const isIdleRef = useRef(false);
 
-  const [percent, setPercent] = useState(0);
   const [visible, setVisible] = useState(false);
   const [isIdle, setIsIdle] = useState(false);
 
@@ -36,19 +38,30 @@ export default function ScrollProgress({ showAfter = 400 }) {
         );
       }
 
-      setPercent(Math.round(ratio * 100));
-      setVisible(maxScroll > 0 && scrollTop > showAfter);
+      if (percentRef.current) {
+        percentRef.current.textContent = String(Math.round(ratio * 100));
+      }
+
+      const shouldBeVisible = maxScroll > 0 && scrollTop > showAfter;
+      if (isVisibleRef.current !== shouldBeVisible) {
+        isVisibleRef.current = shouldBeVisible;
+        setVisible(shouldBeVisible);
+      }
     };
 
     const requestUpdate = () => {
       // While scrolling: show the number (not idle)
-      setIsIdle(false);
+      if (isIdleRef.current) {
+        isIdleRef.current = false;
+        setIsIdle(false);
+      }
 
       // Reset the idle timer on every scroll tick
       if (idleTimerRef.current) {
         clearTimeout(idleTimerRef.current);
       }
       idleTimerRef.current = setTimeout(() => {
+        isIdleRef.current = true;
         setIsIdle(true);
       }, IDLE_DELAY);
 
@@ -132,8 +145,11 @@ export default function ScrollProgress({ showAfter = 400 }) {
           />
         </svg>
 
-        <span className="scroll-progress__percent" aria-hidden="true">
-          {percent}
+        <span
+          ref={percentRef}
+          className="scroll-progress__percent"
+          aria-hidden="true">
+          0
         </span>
 
         <svg

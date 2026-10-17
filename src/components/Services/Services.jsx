@@ -1,4 +1,4 @@
-import React, { useRef, useState, useMemo } from "react";
+import React, { useRef, useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
 import {
@@ -58,7 +58,9 @@ export default function Services() {
   const { t } = useTranslation();
   const trackRef = useRef(null);
   const [selectedService, setSelectedService] = useState(null);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isInView, setIsInView] = useState(
+    () => typeof IntersectionObserver === "undefined",
+  );
 
   // Build the localized services array on language change
   const servicesData = useMemo(
@@ -81,6 +83,21 @@ export default function Services() {
   );
 
   const duplicatedServices = [...servicesData, ...servicesData];
+
+  useEffect(() => {
+    const carousel = trackRef.current;
+    if (!carousel) return;
+
+    if (typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { rootMargin: "100px 0px" },
+    );
+    observer.observe(carousel);
+
+    return () => observer.disconnect();
+  }, []);
 
   // Helper to compose the color-variant class dynamically
   const colorClass = (colorKey) =>
@@ -120,10 +137,8 @@ export default function Services() {
         <div
           ref={trackRef}
           className={`${styles.servicesScrollTrack} ${
-            isPaused ? styles.servicesScrollTrackPaused : ""
+            !isInView ? styles.servicesScrollTrackPaused : ""
           }`}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
           role="region"
           aria-label={t("services.carouselAria")}>
           {duplicatedServices.map((service, index) => {

@@ -147,7 +147,6 @@
   width: max-content;
   padding-inline: 0;
   animation: marqueeRight 40s linear infinite;
-  will-change: transform;
 }
 
 /* RTL: flip the marquee direction so it visually scrolls the other way */
@@ -175,6 +174,10 @@
 
 /* Pause on hover */
 .servicesScrollTrackPaused {
+  animation-play-state: paused;
+}
+
+.servicesScrollTrack:hover {
   animation-play-state: paused;
 }
 

@@ -1,5 +1,5 @@
 // components/MarqueeSection.jsx - Tech Stack Version
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Marquee.css";
 
 const techImages = [
@@ -26,11 +26,31 @@ const techImages = [
 
 const MarqueeSection = () => {
   const sectionRef = useRef(null);
+  const [isInView, setIsInView] = useState(
+    () => typeof IntersectionObserver === "undefined",
+  );
   const row1Images = techImages.slice(0, 11);
   const row2Images = techImages.slice(11);
 
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    if (typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { rootMargin: "100px 0px" },
+    );
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section ref={sectionRef} className="marquee-section">
+    <section
+      ref={sectionRef}
+      className={`marquee-section${isInView ? " marquee-section--in-view" : ""}`}>
       <div className="marquee-label">⚡ TECH STACK & TOOLS ⚡</div>
       <div className="marquee-row marquee-row--left">
         {[...row1Images, ...row1Images, ...row1Images].map((url, index) => (

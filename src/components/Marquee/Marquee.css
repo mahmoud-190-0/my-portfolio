@@ -68,13 +68,19 @@
 
 .marquee-row--left {
   animation: marquee-left 45s linear infinite;
+  animation-play-state: paused;
 }
 
 .marquee-row--right {
   animation: marquee-right 45s linear infinite;
+  animation-play-state: paused;
 }
 
-.marquee-row:hover {
+.marquee-section--in-view .marquee-row {
+  animation-play-state: running;
+}
+
+.marquee-section--in-view .marquee-row:hover {
   animation-play-state: paused;
 }
 

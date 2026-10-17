@@ -1,4 +1,4 @@
-import React, {
+import {
   useState,
   useRef,
   useEffect,
@@ -39,7 +39,9 @@ export default function ProcessSection() {
   const { t } = useTranslation();
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [isInView, setIsInView] = useState(false);
+  const [isInView, setIsInView] = useState(
+    () => typeof IntersectionObserver === "undefined",
+  );
   const shouldReduceMotion = useReducedMotion();
   const stepperTrackRef = useRef(null);
   const sectionRef = useRef(null);
@@ -92,10 +94,7 @@ export default function ProcessSection() {
     const section = sectionRef.current;
     if (!section) return;
 
-    if (typeof IntersectionObserver === "undefined") {
-      setIsInView(true);
-      return;
-    }
+    if (typeof IntersectionObserver === "undefined") return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -159,7 +158,9 @@ export default function ProcessSection() {
     <section
       id="process"
       ref={sectionRef}
-      className={styles.processSection}
+      className={`${styles.processSection} ${
+        isInView ? styles.processInView : ""
+      }`}
       aria-labelledby="process-heading">
       {/* Animated aurora gradient background */}
       <div className={styles.processAnimatedGradient} aria-hidden="true">

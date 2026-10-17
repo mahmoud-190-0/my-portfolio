@@ -28,7 +28,6 @@
 .processGradientOrb {
   position: absolute;
   border-radius: 50%;
-  will-change: transform, opacity;
   transition: background var(--transition-normal);
 }
 
@@ -104,10 +103,14 @@
     color-mix(in srgb, var(--primary-color) 4%, transparent) 0%,
     transparent 60%
   );
-  background-size: 300% 300%;
   animation: processGradientMeshFlow 16s ease infinite;
   opacity: 0.85;
   transition: background var(--transition-normal);
+}
+
+.processSection:not(.processInView) .processGradientOrb,
+.processSection:not(.processInView) .processGradientMesh {
+  animation-play-state: paused;
 }
 
 /* Light theme: soften orbs a bit more */
@@ -166,13 +169,13 @@
 
 @keyframes processGradientMeshFlow {
   0% {
-    background-position: 0% 50%;
+    transform: translate3d(-2%, 0, 0) scale(1.05);
   }
   50% {
-    background-position: 100% 50%;
+    transform: translate3d(2%, -1%, 0) scale(1.08);
   }
   100% {
-    background-position: 0% 50%;
+    transform: translate3d(-2%, 0, 0) scale(1.05);
   }
 }
 

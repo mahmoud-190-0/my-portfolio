@@ -245,9 +245,12 @@ export default function Navbar() {
           </button>
 
           {/* Contact CTA */}
+          {/* Contact CTA */}
           <motion.a
-            href="#contact"
-            onClick={(e) => handleNavClick(e, "contact")}
+            href="https://wa.me/201032359670?text=Hello%20Mahmoud,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsMobileMenuOpen(false)} // نغلق القائمة فقط، بدون preventDefault
             className={styles["navbar__cta"]}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
@@ -255,7 +258,6 @@ export default function Navbar() {
             <span>{t("nav.cta")}</span>
             <ArrowUpRight className={styles["navbar__cta-icon"]} size={14} />
           </motion.a>
-
           {/* Mobile Menu Toggle Button */}
           <motion.button
             type="button"

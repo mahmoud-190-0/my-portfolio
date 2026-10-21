@@ -104,7 +104,7 @@ export default function Contact() {
   )}`;
 
   return (
-    <section id="contact" className={c("contact-section")}>
+    <section className={c("contact-section")}>
       {/* Background ambient lighting effects */}
       <div
         className={`${c("contact-ambient-glow")} ${c("contact-ambient-glow-left")}`}
@@ -245,7 +245,9 @@ export default function Contact() {
               <div className={c("contact-channels-group")}>
                 <a
                   href={`https://wa.me/201032359670?text=${encodeURIComponent(
-                    t("contact.whatsappMessage"),
+                    t(
+                      "Hello Mahmoud, I saw your portfolio and would like to connect!",
+                    ),
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -267,7 +269,7 @@ export default function Contact() {
           </div>
 
           {/* RIGHT COLUMN: Form Card */}
-          <div className={c("contact-right-col")}>
+          <div id="contact" className={c("contact-right-col")}>
             <div className={c("contact-form-card")}>
               <div className={c("contact-form-header")}>
                 <div className={c("contact-form-title-group")}>

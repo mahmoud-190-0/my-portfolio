@@ -1,14 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Trans, useTranslation } from "react-i18next";
-import {
-  MessageCircle,
-  ArrowUpRight,
-  Code2,
-  Server,
-  Database,
-  Sparkles,
-} from "lucide-react";
+import { MessageCircle, ArrowUpRight } from "lucide-react";
 import styles from "./About.module.css";
 
 export default function About() {

@@ -54,8 +54,15 @@ export default function Footer({ phone = "01032359670" }) {
     social,
   } = FOOTER;
 
+  // الحل الجذري: تنظيف النص يدوياً بدون استخدام encodeURIComponent
+  const safeHireMessage = hireMessage
+    .replace(/ /g, "%20")
+    .replace(/,/g, "%2C")
+    .replace(/!/g, "%21")
+    .replace(/\?/g, "%3F");
+
   const scrollToContact = (e) => {
-    e.preventDefault();
+    // e.preventDefault(); // تم إيقافه لكي يفتح رابط الواتساب
     const contactSection = document.getElementById("contact");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
@@ -195,10 +202,10 @@ export default function Footer({ phone = "01032359670" }) {
             {/* Primary CTA: HIRE ME NOW */}
             <div className={c("custom-footer-cta-wrap")}>
               <a
-                href={`https://wa.me/201032359670?text=${encodeURIComponent(
-                  hireMessage,
-                )}`}
+                href={`https://wa.me/201032359670?text=${safeHireMessage}`}
                 onClick={scrollToContact}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={c("custom-hire-btn")}>
                 <span>{hireCta}</span>
 

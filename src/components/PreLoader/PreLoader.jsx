@@ -2,25 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Sparkles, Code2 } from "lucide-react";
 import "./PreLoader.css";
 
-/**
- * Fantastic Website Preloader Component
- * Author: Mahmoud Ahmed
- *
- * Full-screen loading screen with animated logo, orbital spinner,
- * smooth percentage counter, and seamless fade-out transition.
- * Shows on every page load (no session persistence).
- *
- * @param {Object} props
- * @param {Function} [props.onLoaded] - Callback fired once preloader unmounts
- * @param {number} [props.minDuration] - Minimum display time in ms (default: 1400ms)
- * @param {number} [props.maxDuration] - Maximum safety timeout in ms (default: 2800ms)
- */
 export default function Preload({
   onLoaded,
   minDuration = 2800,
   maxDuration = 3100,
 }) {
-  const [isMounted, setIsMounted] = useState(true); // ✅ يظهر كل مرة
+  const [isMounted, setIsMounted] = useState(true);
   const [isExiting, setIsExiting] = useState(false);
   const [progress, setProgress] = useState(12);
   const [statusMessage, setStatusMessage] = useState(
